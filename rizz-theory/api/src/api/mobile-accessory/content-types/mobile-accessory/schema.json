@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mobile_accessories",
+  "info": {
+    "singularName": "mobile-accessory",
+    "pluralName": "mobile-accessories",
+    "displayName": "bag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "product_description": {
+      "type": "text"
+    },
+    "product_price": {
+      "type": "integer"
+    },
+    "product_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

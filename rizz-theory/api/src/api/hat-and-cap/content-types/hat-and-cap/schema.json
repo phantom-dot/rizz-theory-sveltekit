@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hat_and_caps",
+  "info": {
+    "singularName": "hat-and-cap",
+    "pluralName": "hat-and-caps",
+    "displayName": "hat & cap",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_name": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_description": {
+      "type": "string"
+    },
+    "product_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "product_price": {
+      "type": "integer"
+    }
+  }
+}
