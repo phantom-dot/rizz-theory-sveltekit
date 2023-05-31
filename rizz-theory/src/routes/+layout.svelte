@@ -36,6 +36,23 @@
         </div>
     </nav>
 
+
+
+
+<slot></slot>
+<footer>
+        <div class="icons-div">
+            <div><Icon icon="logos:facebook" class="inline" height="20"/></div>
+            <div><Icon icon="logos:twitter" height="20" class="inline"/></div>
+            <div><Icon icon="logos:instagram-icon" height="20" class="inline"/></div>
+            <div><Icon icon="logos:youtube-icon" height="20" class="inline"/></div>
+        </div>
+    <div>
+        <p>© 2021 Rizztheory. All rights reserved.</p>
+    </div>
+
+</footer>
+
 <style>
     @tailwind base;
     @tailwind components;
@@ -86,6 +103,13 @@
         font-family: 'Sen', sans-serif;
     }
 
+    footer{
+        background: #F6F6F8;
+        padding: 10px;
+        font-family: 'Sen', sans-serif;
+        text-align: center;
+    }
+    .icons-div div{
+        padding: 10px;
+    }
 </style>
-
-<slot></slot>
