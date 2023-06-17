@@ -34,6 +34,9 @@
         "videos",
         "audios"
       ]
+    },
+    "product_category": {
+      "type": "string"
     }
   }
 }
