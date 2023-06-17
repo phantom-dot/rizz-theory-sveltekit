@@ -1,19 +1,24 @@
 <script>
     import logo from '../lib/images/logo2.png';
     import Icon from '@iconify/svelte';
-
+    import {isAuthenticated} from "../utils/auth.js";
+    import {get} from "svelte/store";
+    import {userStore} from "./account/login/userdetails.js";
+    let newvalue;
+    let username
+    isAuthenticated.subscribe(value=> newvalue=value)
+    userStore.subscribe(value => username=value)
+    console.log(get(isAuthenticated))
 </script>
     <nav class="main-nav ">
-
         <div class='outer-nav flex flex-row items-center justify-around m-2'>
-
             <div class='logo lg:w-1/12 sm:w-1/6'>
                <a href="/"> <img src={logo} alt="logo" /></a>
             </div>
 
             <div class='routes'>
                 <ul class='nav-routes-link'>
-                    <li  class="cursor-pointer"><a href="/">T-shirts</a></li>
+                    <li  class="cursor-pointer"><a href="/shirts">T-shirts</a></li>
                     <li  class="cursor-pointer"><a href="/">Hats & Caps</a></li>
                     <li  class="cursor-pointer"><a href="/">eyewear</a></li>
                     <li  class="cursor-pointer"><a href="/">apparel</a></li>
@@ -30,15 +35,10 @@
         <div class="loginbar flex justify-around p-1">
             <div class=""><Icon icon="tabler:mail" class="inline" /> <a id="contact-mail-div">hello@rizztheo.com</a></div>
             <a class="shop-latest">Shop latest</a>
-            <div> <Icon icon="material-symbols:person-2-outline" class="inline" width="25"/>
-                <Icon icon="material-symbols:shopping-cart-outline-rounded" class="inline" width="25" /></div>
-
+            <div> Hey {newvalue===true ? username : "Stranger"} !! <a href={ newvalue === true ? "/account/dashboard": "/account/login"  } ><Icon icon="material-symbols:person-2-outline" class="inline" width="25"/></a>
+                <a href= {newvalue === true ? "/cart" : "/account/login"}><Icon icon="material-symbols:shopping-cart-outline-rounded" class="inline" width="25" /></a> </div>
         </div>
     </nav>
-
-
-
-
 <slot></slot>
 <footer>
         <div class="icons-div">
